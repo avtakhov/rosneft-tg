@@ -4,7 +4,7 @@ from telegram import Update, ForceReply
 from telegram.ext import ContextTypes
 
 from models import messages
-from models.user import users_db, User, UserStatus, WaitingForTicket
+from models.user import users_db, User, WaitingForTicket
 from utils.text_handler import text_handler
 
 
@@ -18,5 +18,5 @@ async def handle(update: Update, _: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(
         text='В следующем сообщении опишите свою проблему 📝',
-        reply_markup=ForceReply(input_field_placeholder='так сяк'),
+        reply_markup=ForceReply(),
     )
